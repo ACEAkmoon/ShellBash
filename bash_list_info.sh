@@ -2,7 +2,7 @@
 #start: ./bash_list_info.sh
 
 NAME=root
-HOST=cloud.gordon.host
+HOST=host.ub18
 CMND="$NAME""@""$HOST"
 
 NOC="\033[0m"
@@ -29,7 +29,7 @@ echo -e "============================================ "$PRC"SYS INFO"$NOC" =====
 
 printf ""$TSC"CPU"$NOC"\t"  && ssh $CMND lscpu | grep "Model name"
 printf ""$TSC"RAM"$NOC"\t"  && ssh $CMND free -h | grep Mem | awk '{printf "total " $2 "\t" "used " $3 "\t" "free " $4 "\n"}'
-printf ""$TSC"HDD"$NOC"\t"  && ssh $CMND df -HT | grep SITES | awk '{printf "total " $3 "\t" "used " $4 "\t" "free " $5 "\t" "type " $2 "\t" $1 "\n"}'
+printf ""$TSC"HDD"$NOC"\t"  && ssh $CMND df -HT | grep udev | awk '{printf "total " $3 "\t" "used " $4 "\t" "free " $5 "\t" "type " $2 "\t" $1 "\n"}'
 printf ""$TSC"VM"$NOC"\t"   && ssh $CMND lscpu | grep Virtualization | awk '{printf $2 "\n"}'
 printf ""$TSC"NAME"$NOC"\t" && ssh $CMND hostname | awk '{printf $1 "\n"}'
 printf ""$TSC"IP"$NOC"\t"   && ssh $CMND ifconfig | grep "inet " | awk '{printf $2 "\n"}'
