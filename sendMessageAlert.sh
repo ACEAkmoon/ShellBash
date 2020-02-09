@@ -1,6 +1,11 @@
 #!/bin/bash
+### BEGIN INIT INFO
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+### END INIT INFO
+
 #https://www.cyberciti.biz/faq/bash-while-loop/
-TIME=300
+TIME=10
 
 while [ $TIME -gt 0 ]
         do
@@ -13,3 +18,4 @@ curl -s -X POST "https://api.telegram.org/bot<TOKEN:TOKEN>/sendMessage" -F chat_
 
 echo ''
 echo Well Done!
+exit 0
