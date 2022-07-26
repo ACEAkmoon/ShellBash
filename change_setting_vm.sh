@@ -31,7 +31,7 @@ userinput=""
 echo -e $WAC"Press 'ESC' key to quit, or 'C' to continue"$NOC
 while read -r -n1 key
 	do
-	if [[ $key == $'\e' ]]; then 
+	if [[ $key == $'\e' ]]; then
 		break;
 	elif [[ $key == c ]]; then
 		echo -e "============================= "$PRC"Change TCP-interfaces"$NOC" ============================="
@@ -42,7 +42,7 @@ while read -r -n1 key
 		echo ''
 		echo -e "============================= "$PRC"Change HostName"$NOC" ==================================="
 		hostnamectl set-hostname $NAME
-		hostname 
+		hostname
 		echo ''
 		echo -e "============================= "$PRC"Change Hosts"$NOC" ======================================"
 		sed -i "2s/$IPAD*.5*/$IPAD$SBNT.$ADDR\t$NAME\t$NAME/" /etc/hosts
